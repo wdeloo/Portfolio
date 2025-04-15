@@ -96,7 +96,7 @@ export default function Sticked({ children, className }: { children: React.React
                             translate: `${leftCorner ? -50 : 50}% ${topCorner ? -50 : 50}%`,
                             rotate: `${rotation * (rotatePos ? 1 : -1)}deg`
                         }}
-                        className="bg-white/85 backdrop-blur-[0.5px] h-3 absolute"
+                        className="bg-white/85 backdrop-blur-[0.5px] absolute"
                     />
                 )
             })}

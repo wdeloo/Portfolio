@@ -1,22 +1,33 @@
 ---
+import Tags from "../../layouts/Tags.astro";
 import Sticked from "../Sticked.js";
+import Nextjs from "./tags/Nextjs.astro";
+import Tailwindcss from "./tags/Tailwindcss.astro";
+import Typescript from "./tags/Typescript.astro";
 ---
 
-<article class="flex flex-row justify-between rounded">
-    <div class="flex flex-col gap-2">
-        <h2 class="font-bold text-2xl">
-            Brilliant Chess
-        </h2>
-        <div class="text-lg leading-6 flex flex-col gap-2">
-            <p>
-                A web app to analyze chess games for <b>FREE</b> like <b>chess.com</b> does for <b>5.5$/mo</b>.
-            </p>
-            <p>
-                It is powered by the <b>StockFish</b> engine in <b>Web Assembly</b>.
-            </p>
+<article class="flex flex-col gap-2">
+    <div class="flex flex-row justify-between rounded">
+        <div class="flex flex-col gap-2">
+            <h2 class="font-bold text-2xl">
+                Brilliant Chess
+            </h2>
+            <div class="text-lg leading-6 flex flex-col gap-2">
+                <p>
+                    A web app to analyze chess games for <b>FREE</b> like <b>chess.com</b> does for <b>5.5$/mo</b>.
+                </p>
+                <p>
+                    It is powered by the <b>StockFish</b> engine in <b>Web Assembly</b>.
+                </p>
+            </div>
         </div>
+        <Sticked client:load className="min-w-2/5 max-w-2/5 h-fit">
+            <img class="shadow-sm" src="/projects/brilliant-chess.png" />
+        </Sticked>
     </div>
-    <Sticked client:load className="min-w-2/5 max-w-2/5 h-fit">
-        <img class="shadow" src="/projects/brilliant-chess.png" />
-    </Sticked>
+    <Tags>
+        <Nextjs rotate={-1} />
+        <Tailwindcss rotate={3} />
+        <Typescript rotate={-1} />
+    </Tags>
 </article>
