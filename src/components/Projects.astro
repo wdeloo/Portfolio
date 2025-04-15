@@ -1,0 +1,16 @@
+---
+import BrilliantChess from "./projects/BrilliantChess.astro";
+import DazBoard from "./projects/DazBoard.astro";
+---
+
+<section class="flex flex-col gap-6">
+    <h1 class="text-4xl font-extrabold">Some of my Projects</h1>
+    <ul class="grid grid-cols-5 gap-4 *:shadow *:shadow-neutral-400 *:hover:rotate-0 *:hover:scale-105 *:hover:shadow-lg *:will-change-transform *:hover:z-10 *:transition *:duration-200 *:p-4">
+        <li class="col-span-5 bg-yellow-100 rotate-1">
+            <BrilliantChess />
+        </li>
+        <li class="col-span-2 bg-purple-100 -rotate-2">
+            <DazBoard />
+        </li>
+    </ul>
+</section>
