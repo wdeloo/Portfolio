@@ -65,7 +65,7 @@ if (twoTapes) {
 }
 ---
 
-<div class={className + " relative overflow-visible"}>
+<div class={className + " relative overflow-visible block"}>
     <slot />
     {tapes.map(({ corner, rotation, length, width, position }, i) => {
         const topCorner = corner === 0 || corner === 1
