@@ -1,12 +1,12 @@
 ---
 import Tags from "../../layouts/Tags.astro";
-import Sticked from "../Sticked";
+import Sticked from "../Sticked.astro";
 import React from "./tags/React.astro";
 import Tailwind from "./tags/Tailwind.astro";
 ---
 
 <article class="flex flex-col gap-3">
-    <Sticked client:load className="w-full h-fit">
+    <Sticked className="w-full h-fit">
         <img class="w-full shadow" src="/images/projects/dazboard.png" />
     </Sticked>
     <div class="flex flex-col gap-4">

@@ -1,6 +1,6 @@
 ---
 import Tags from "../../layouts/Tags.astro";
-import Sticked from "../Sticked.js";
+import Sticked from "../Sticked.astro";
 import Next from "./tags/Next.astro";
 import Tailwind from "./tags/Tailwind.astro";
 import Typescript from "./tags/Typescript.astro";
@@ -21,7 +21,7 @@ import Typescript from "./tags/Typescript.astro";
                 </p>
             </div>
         </div>
-        <Sticked client:load className="min-w-2/5 max-w-2/5 h-fit">
+        <Sticked className="min-w-2/5 max-w-2/5 h-fit">
             <img class="shadow-sm" src="/images/projects/brilliant-chess.png" />
         </Sticked>
     </div>

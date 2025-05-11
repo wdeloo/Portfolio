@@ -1,0 +1,94 @@
+---
+const { className } = Astro.props
+
+interface Tape {
+    corner: number
+    rotation: number
+    position: {
+        x: number
+        y: number
+    }
+    length: number
+    width: number
+}
+
+function getRandomRotation() {
+    const min = 35
+    const max = 55
+
+    return Math.floor(Math.random() * ((max - min) + 1)) + min
+}
+
+function getRandomPosition() {
+    const min = 3
+    const max = 7
+
+    return Math.floor(Math.random() * ((max - min) + 1)) + min
+}
+
+function getRandomLength() {
+    const min = 25
+    const max = 40
+
+    return Math.floor(Math.random() * ((max - min) + 1)) + min
+}
+
+function getRandomWidth() {
+    const min = 11
+    const max = 13
+
+    return Math.floor(Math.random() * ((max - min) + 1)) + min
+}
+
+const twoTapes = Math.floor(Math.random() * 2)
+const tapes: Tape[] = []
+
+if (twoTapes) {
+    if (Math.floor(Math.random() * 2)) {
+        tapes.push(
+            { corner: 0, rotation: getRandomRotation(), length: getRandomLength(), width: getRandomWidth(), position: { x: getRandomPosition(), y: getRandomPosition() } },
+            { corner: 3, rotation: getRandomRotation(), length: getRandomLength(), width: getRandomWidth(), position: { x: getRandomPosition(), y: getRandomPosition() } },
+        )
+    } else {
+        tapes.push(
+            { corner: 1, rotation: getRandomRotation(), length: getRandomLength(), width: getRandomWidth(), position: { x: getRandomPosition(), y: getRandomPosition() } },
+            { corner: 2, rotation: getRandomRotation(), length: getRandomLength(), width: getRandomWidth(), position: { x: getRandomPosition(), y: getRandomPosition() } },
+        )
+    }
+} else {
+    tapes.push(
+        { corner: 0, rotation: getRandomRotation(), length: getRandomLength(), width: getRandomWidth(), position: { x: getRandomPosition(), y: getRandomPosition() } },
+        { corner: 1, rotation: getRandomRotation(), length: getRandomLength(), width: getRandomWidth(), position: { x: getRandomPosition(), y: getRandomPosition() } },
+        { corner: 2, rotation: getRandomRotation(), length: getRandomLength(), width: getRandomWidth(), position: { x: getRandomPosition(), y: getRandomPosition() } },
+        { corner: 3, rotation: getRandomRotation(), length: getRandomLength(), width: getRandomWidth(), position: { x: getRandomPosition(), y: getRandomPosition() } },
+    )
+}
+---
+
+<div class={className + " relative overflow-visible"}>
+    <slot />
+    {tapes.map(({ corner, rotation, length, width, position }, i) => {
+        const topCorner = corner === 0 || corner === 1
+        const leftCorner = corner === 0 || corner === 2
+
+        const rotatePos = topCorner === leftCorner
+
+        return (
+            <div
+                style={{
+                    top: topCorner ? position.y + 'px' : undefined,
+                    left: leftCorner ? position.x + 'px' : undefined,
+                    bottom: !topCorner ? position.y + 'px' : undefined,
+                    right: !leftCorner ? position.x + 'px' : undefined,
+
+                    height: length + 'px',
+                    width: width + 'px',
+
+                    translate: `${leftCorner ? -50 : 50}% ${topCorner ? -50 : 50}%`,
+                    rotate: `${rotation * (rotatePos ? 1 : -1)}deg`
+                }}
+                class="bg-white/85 backdrop-blur-[0.5px] absolute"
+            />
+        )
+    })}
+</div>
