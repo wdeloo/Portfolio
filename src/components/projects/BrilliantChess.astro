@@ -7,23 +7,19 @@ import Typescript from "./tags/Typescript.astro";
 ---
 
 <article class="flex flex-col gap-2">
-    <div class="flex flex-row justify-between rounded">
-        <div class="flex flex-col gap-2">
-            <h2 class="font-bold text-2xl">
-                Brilliant Chess
-            </h2>
-            <div class="text-lg leading-6 flex flex-col gap-2">
-                <p>
-                    A web app to analyze chess games for <b>FREE</b> like <b>chess.com</b> does for <b>5.5$/mo</b>.
-                </p>
-                <p>
-                    It is powered by the <b>StockFish</b> engine in <b>Web Assembly</b>.
-                </p>
-            </div>
-        </div>
-        <Sticked className="min-w-2/5 max-w-2/5 h-fit">
+    <h2 class="font-extrabold text-2xl">
+        Brilliant Chess
+    </h2>
+    <div class="text-lg leading-6">
+        <Sticked className="float-right min-w-2/5 max-w-2/5 h-fit ml-3 -mb-7 bottom-10">
             <img class="shadow-sm" src="/images/projects/brilliant-chess.png" />
         </Sticked>
+        <p>
+            A web app to analyze chess games for <b>FREE</b> like <b>chess.com</b> does for <b>5.5$/mo</b>.
+        </p>
+        <p class="mt-2">
+            It is powered by the <b>StockFish</b> engine in <b>Web Assembly</b>.
+        </p>
     </div>
     <Tags>
         <Next />
