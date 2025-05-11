@@ -2,12 +2,12 @@
 import Tags from "../../layouts/Tags.astro";
 import Sticked from "../Sticked";
 import React from "./tags/React.astro";
-import Tailwindcss from "./tags/Tailwindcss.astro";
+import Tailwind from "./tags/Tailwind.astro";
 ---
 
 <article class="flex flex-col gap-3">
     <Sticked client:load className="w-full h-fit">
-        <img class="w-full shadow" src="/projects/dazboard.png" />
+        <img class="w-full shadow" src="/images/projects/dazboard.png" />
     </Sticked>
     <div class="flex flex-col gap-4">
         <div class="flex flex-col gap-2">
@@ -30,7 +30,7 @@ import Tailwindcss from "./tags/Tailwindcss.astro";
         </div>
         <Tags>
             <React rotate={2} />
-            <Tailwindcss rotate={-1} />
+            <Tailwind rotate={-1} />
         </Tags>
     </div>
 </article>

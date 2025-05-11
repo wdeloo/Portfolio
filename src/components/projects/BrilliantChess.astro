@@ -2,7 +2,7 @@
 import Tags from "../../layouts/Tags.astro";
 import Sticked from "../Sticked.js";
 import Next from "./tags/Next.astro";
-import Tailwindcss from "./tags/Tailwindcss.astro";
+import Tailwind from "./tags/Tailwind.astro";
 import Typescript from "./tags/Typescript.astro";
 ---
 
@@ -22,12 +22,12 @@ import Typescript from "./tags/Typescript.astro";
             </div>
         </div>
         <Sticked client:load className="min-w-2/5 max-w-2/5 h-fit">
-            <img class="shadow-sm" src="/projects/brilliant-chess.png" />
+            <img class="shadow-sm" src="/images/projects/brilliant-chess.png" />
         </Sticked>
     </div>
     <Tags>
         <Next rotate={-1} />
-        <Tailwindcss rotate={3} />
+        <Tailwind rotate={3} />
         <Typescript rotate={-1} />
     </Tags>
 </article>
