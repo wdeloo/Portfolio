@@ -1,20 +1,25 @@
 ---
-import BrilliantChess from "./projects/BrilliantChess.astro";
-import DazBoard from "./projects/DazBoard.astro";
-import HTBMadeEZ from "./projects/HTBMadeEZ.astro";
+import ProjectContainer from "./projects/ProjectContainer.astro";
+import BrilliantChess from "./projects/projects/BrilliantChess.astro";
+import DazBoard from "./projects/projects/DazBoard.astro";
+import HTBMadeEZ from "./projects/projects/HTBMadeEZ.astro";
+import Inflatio from "./projects/projects/Inflatio.astro";
 ---
 
 <section class="flex flex-col gap-6">
     <h1 class="text-4xl font-extrabold">Some of my Projects</h1>
-    <ul class="grid grid-cols-5 gap-5 *:shadow *:shadow-neutral-400 *:hover:rotate-0 *:hover:scale-105 *:hover:shadow-lg *:will-change-transform *:hover:z-10 *:transition *:duration-200 *:p-4">
-        <li class="col-span-5 bg-yellow-100 rotate-[0.5deg]">
+    <ul class="grid grid-cols-5 gap-5">
+        <ProjectContainer cols={5} rotate={1} color="var(--color-yellow-100)">
             <BrilliantChess />
-        </li>
-        <li class="col-span-2 row-span-3 bg-blue-100 -rotate-1">
+        </ProjectContainer>
+        <ProjectContainer cols={2} rows={2} rotate={-1} color="var(--color-blue-100)">
             <DazBoard />
-        </li>
-        <li class="col-span-3 bg-green-100 rotate-1">
+        </ProjectContainer>
+        <ProjectContainer cols={3} rotate={1} color="var(--color-green-100)">
             <HTBMadeEZ />
-        </li>
+        </ProjectContainer>
+        <ProjectContainer cols={3} rows={2} rotate={0.5} color="var(--color-red-100)">
+            <Inflatio />
+        </ProjectContainer>
     </ul>
 </section>

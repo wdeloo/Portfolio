@@ -1,0 +1,20 @@
+---
+const { cols = 1, rows = 1, rotate = 0, color } = Astro.props
+---
+
+<li class="shadow shadow-neutral-400 hover:scale-105 hover:shadow-lg will-change-transform hover:z-10 transition duration-200 p-4"
+    style={`grid-column: span ${cols} / span ${cols}; grid-row: span ${rows} / span ${rows}; background-color: ${color}`}>
+    <slot />
+</li>
+
+<style define:vars={{
+    "initial-rotate": rotate + "deg"
+}}>
+    li {
+        transform: rotate(var(--initial-rotate));
+    }
+
+    li:hover {
+        transform: rotate(0);
+    }
+</style>

@@ -1,0 +1,34 @@
+---
+import Tags from "../tags/Tags.astro";
+import Sticked from "../Sticked.astro";
+import React from "../tags/tags/React.astro";
+import Tailwind from "../tags/tags/Tailwind.astro";
+import TextContainer from "../TextContainer.astro";
+import TypeScript from "../tags/tags/TypeScript.astro";
+---
+
+<article class="flex flex-col gap-3">
+    <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-2">
+            <h2 class="font-extrabold text-2xl">HTB Made EZ</h2>
+            <div>
+                <Sticked className="w-4/7 h-fit float-right ml-3 -mb-7 bottom-10">
+                    <img class="w-full shadow" src="/images/projects/htb-made-ez.png" />
+                </Sticked>
+                <TextContainer>
+                    <p>
+                        Walkthroughs for the <b>HackTheBox</b> CTF platform, written in an <b>easy-to-understand</b> format.
+                    </p>
+                    <p>
+                        All writeups are created in <b>Markdown</b>, enhanced with custom components.
+                    </p>
+                </TextContainer>
+            </div>
+        </div>
+        <Tags>
+            <React />
+            <Tailwind />
+            <TypeScript />
+        </Tags>
+    </div>
+</article>
