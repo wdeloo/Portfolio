@@ -1,0 +1,38 @@
+---
+import Sticked from "../Sticked.astro";
+import Tags from "../tags/Tags.astro";
+import AstroTag from "../tags/tags/Astro.astro";
+import Tailwind from "../tags/tags/Tailwind.astro";
+import TypeScript from "../tags/tags/TypeScript.astro";
+import TextContainer from "../TextContainer.astro";
+---
+
+<article class="flex flex-col gap-4">
+    <div class="flex flex-col gap-2">
+        <div class="flex flex-row w-full">
+            <div class="w-1/2 mr-4"></div>
+            <h2 class="font-extrabold text-2xl text-right">Inflatio</h2>
+        </div>
+        <div>
+            <Sticked className="min-w-1/2 max-w-1/2 float-left bottom-10 -mb-10 mr-4">
+                <img src="/images/projects/inflatio.png" class="w-full shadow" />
+            </Sticked>
+            <TextContainer>
+                <p>
+                    An <b>inflation calculator</b> that shows how inflation has impacted your wallet over time.
+                </p>
+                <p>
+                    It fetches inflation data from the <b>World Bank API</b> and calculates value changes based on the amount and year you provide.
+                </p>
+                <p>
+                    The app includes <b>custom-built charts</b> to visualize the data clearly and effectively.
+                </p>
+            </TextContainer>
+        </div>
+    </div>
+    <Tags>
+        <AstroTag />
+        <Tailwind />
+        <TypeScript />
+    </Tags>
+</article>
