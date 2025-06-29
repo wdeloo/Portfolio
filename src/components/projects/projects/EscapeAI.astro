@@ -1,0 +1,28 @@
+---
+import Sticked from "../Sticked.astro";
+import Tags from "../tags/Tags.astro";
+import Python from "../tags/tags/Python.astro";
+import TextContainer from "../TextContainer.astro";
+---
+
+<article class="flex flex-col gap-3">
+    <Sticked className="w-full h-fit">
+        <img class="w-full shadow" src="/images/projects/escapeai.png" />
+    </Sticked>
+    <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-2">
+            <h2 class="font-extrabold text-2xl">Escape AI</h2>
+            <TextContainer>
+                <p>
+                    A game where a plane escapes from enemy aircraft. A <b>deep reinforcement learning model</b> learns to play it autonomously.
+                </p>
+                <p>
+                    This project combines simple <b>game development</b>, basic physics, and <b>AI</b> techniques.
+                </p>
+            </TextContainer>
+        </div>
+        <Tags>
+            <Python />
+        </Tags>
+    </div>
+</article>

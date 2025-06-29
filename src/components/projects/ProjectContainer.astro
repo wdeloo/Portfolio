@@ -2,7 +2,7 @@
 const { cols = 1, rows = 1, rotate = 0, color } = Astro.props
 ---
 
-<li class="shadow shadow-neutral-400 hover:scale-105 hover:shadow-lg will-change-transform hover:z-10 transition duration-200 p-4"
+<li class="shadow shadow-neutral-400 hover:scale-105 hover:shadow-lg will-change-transform hover:z-10 transition duration-200 p-4 h-fit"
     style={`grid-column: span ${cols} / span ${cols}; grid-row: span ${rows} / span ${rows}; background-color: ${color}`}>
     <slot />
 </li>

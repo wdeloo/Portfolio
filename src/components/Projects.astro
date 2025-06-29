@@ -2,6 +2,7 @@
 import ProjectContainer from "./projects/ProjectContainer.astro";
 import BrilliantChess from "./projects/projects/BrilliantChess.astro";
 import DazBoard from "./projects/projects/DazBoard.astro";
+import EscapeAI from "./projects/projects/EscapeAI.astro";
 import HTBMadeEZ from "./projects/projects/HTBMadeEZ.astro";
 import Inflatio from "./projects/projects/Inflatio.astro";
 ---
@@ -20,6 +21,9 @@ import Inflatio from "./projects/projects/Inflatio.astro";
         </ProjectContainer>
         <ProjectContainer cols={3} rows={2} rotate={0.5} color="var(--color-red-100)">
             <Inflatio />
+        </ProjectContainer>
+        <ProjectContainer cols={2} rows={2} rotate={1} color="var(--color-sky-100)">
+            <EscapeAI />
         </ProjectContainer>
     </ul>
 </section>
