@@ -1,7 +1,5 @@
 import { useEffect, useRef, useState } from "react"
 
-const INTERVAL_TIME = 200
-
 const me = {
     name: "Guille",
     nick: "Delo"
@@ -14,7 +12,7 @@ function sleep(time: number) {
 }
 
 export default function Name() {
-    const [name, setName] = useState(me.name)
+    const [name, setName] = useState(me.nick)
 
     const nameRef = useRef(name)
 
@@ -41,7 +39,7 @@ export default function Name() {
 
     useEffect(() => {
         setTimeout(() => {
-            updateName(me.nick)
+            updateName(me.name)
         }, 2000)
     }, [])
 
