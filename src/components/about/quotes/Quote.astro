@@ -1,0 +1,14 @@
+---
+import Icon from "./Icon.astro"
+
+const { author, maxWidth } = Astro.props
+---
+
+<blockquote style={`max-width: ${maxWidth};`} class="bg-yellow-200 shadow shadow-black/25 p-2 flex flex-col justify-end text-black text-base/snug relative pt-8.5">
+    <div class="absolute top-2 left-2 flex flex-row gap-1">
+        <Icon />
+        <Icon />
+    </div>
+    <slot />
+    <span class="italic opacity-75 mt-3">- {author}</span>
+</blockquote>

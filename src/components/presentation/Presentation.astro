@@ -4,7 +4,7 @@ import SocialNetworks from "./socialNetworks/SocialNetworks.astro"
 ---
 
 <section class="flex flex-row justify-between items-center">
-    <div class="flex flex-col gap-2">
+    <header class="flex flex-col gap-2">
         <h1 class="text-5xl robotoSlab text-balance leading-16">
             Hi, I'm <Name client:load />
             <span class="emoji">🥇</span>
@@ -12,7 +12,8 @@ import SocialNetworks from "./socialNetworks/SocialNetworks.astro"
         <p class="text-lg text-balance">
             <b class="text-2xl text-pink-500 font-extrabold">Full-Stack Developer</b>
         </p>
-    </div>
+    </header>
+
     <div class="flex flex-col items-center gap-1">
         <img width="300px" src="/images/profile.png" class="rounded-full" />
         <SocialNetworks />

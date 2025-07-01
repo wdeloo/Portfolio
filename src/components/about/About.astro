@@ -1,0 +1,25 @@
+---
+import SectionTitle from "../SectionTitle.astro";
+import Quote from "./quotes/Quote.astro";
+---
+
+<section>
+    <header>
+        <SectionTitle>About Me</SectionTitle>
+    </header>
+
+    <div class="flex flex-row gap-10">
+        <div class="text-lg leading-6 *:mt-2 -mt-2 flex-grow">
+            <p>
+                I'm a 19-year-old full-stack software developer with a strong drive for learning and a passion for <b>building creative solutions to real-world problems</b>.
+            </p>
+            <p>
+                Beyond coding, I'm interested in business and how technology can create real value. I aim to <b>think not just as a developer, but also as a builder with a business mindset</b>.
+            </p>
+        </div>
+
+        <Quote author="Ludiwg Von Mises">
+            Business is the only means to increase the quantity of goods available for preserving life and rendering it more agreeable.
+        </Quote>
+    </div>
+</section>

@@ -1,4 +1,5 @@
 ---
+import SectionTitle from "../SectionTitle.astro";
 import ProjectContainer from "./ProjectContainer.astro";
 import BrilliantChess from "./projects/BrilliantChess.astro";
 import DazBoard from "./projects/DazBoard.astro";
@@ -7,8 +8,11 @@ import HTBMadeEZ from "./projects/HTBMadeEZ.astro";
 import Inflatio from "./projects/Inflatio.astro";
 ---
 
-<section class="flex flex-col gap-6">
-    <h1 class="text-4xl font-extrabold">Some of my Projects</h1>
+<section>
+    <header>
+        <SectionTitle>Some of my Projects</SectionTitle>
+    </header>
+
     <ul class="grid grid-cols-5 gap-5">
         <ProjectContainer cols={5} rotate={1} color="var(--color-yellow-100)">
             <BrilliantChess />
