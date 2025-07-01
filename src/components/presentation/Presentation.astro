@@ -1,16 +1,12 @@
 ---
+import Name from "./Name"
 import SocialNetworks from "./socialNetworks/SocialNetworks.astro"
 ---
 
 <section class="flex flex-row justify-between items-center">
     <div class="flex flex-col gap-2">
         <h1 class="text-5xl robotoSlab text-balance leading-16">
-            Hi, I'm
-            <span
-                class="relative
-                before:content-[''] before:bg-gradient-to-br before:from-purple-300 before:to-pink-300 before:absolute before:block before:w-[110%] before:h-full before:right-1/2 before:translate-x-1/2 before:top-0 before:z-[-10] before:rounded-lg before:rotate-2"
-                >Delo</span
-            >
+            Hi, I'm <Name client:load />
             <span class="emoji">🥇</span>
         </h1>
         <p class="text-lg text-balance">
