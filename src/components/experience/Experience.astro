@@ -1,19 +1,28 @@
 ---
+import { flag, name } from 'country-emoji'
 import SectionTitle from "../SectionTitle.astro";
 import Timeline, { type TimelineItem } from "../Timeline.astro";
 
 interface ExperienceItem {
     date: { from: Date, to: Date }
     title: string
-    company: string
+    company: {
+        name: string
+        location: {
+            city: string
+            country: string
+        }
+    }
     description: string
 }
 
 function experience2timeline(experienceItem: ExperienceItem): TimelineItem {
+    const countryFlag = flag(experienceItem.company.location.country)
+
     return {
         ...experienceItem,
         description: `
-***${experienceItem.company}***
+***${experienceItem.company.name}, ${experienceItem.company.location.city} <span title="${name(countryFlag ?? "") ?? ""}" class="emoji">${countryFlag ?? ""}</span>***
 
 <div class="h-1.5"></div>
 
@@ -25,11 +34,17 @@ ${experienceItem.description}
 const experience: ExperienceItem[] = [
     {
         date: {
-            from: new Date("2025-3"),
-            to: new Date("2025-5")
+            from: new Date("2025-03"),
+            to: new Date("2025-05")
         },
         title: "C# and Python Programmer (Erasmus Internship)",
-        company: "Laus CC, Dubrovnik - Croatia",
+        company: {
+            name: "Laus CC",
+            location: {
+                city: "Dubrovnik",
+                country: "Croatia",
+            }
+        },
         description: `
 * Develop an AI-powered support chat to log and view customer requests or issues.
 

@@ -1,0 +1,69 @@
+---
+import { flag, name } from 'country-emoji'
+import SectionTitle from "../SectionTitle.astro";
+import Timeline, { type TimelineItem } from "../Timeline.astro";
+
+interface EducationItem {
+    date: { from: Date, to: Date }
+    title: string
+    centre: {
+        name: string
+        location: {
+            city: string
+            country: string
+        }
+    }
+}
+
+function education2timeline(educationItem: EducationItem): TimelineItem {
+    const countryFlag = flag(educationItem.centre.location.country)
+
+    return {
+        ...educationItem,
+        description: `
+***${educationItem.centre.name}, ${educationItem.centre.location.city} <span title="${name(countryFlag ?? "") ?? ""}" class="emoji">${countryFlag ?? ""}</span>***
+        `.trim()
+    }
+}
+
+const experience: EducationItem[] = [
+    {
+        date: {
+            from: new Date("2023-09"),
+            to: new Date("2025-06")
+        },
+        title: "Network Systems Administration",
+        centre: {
+            name: "Colegio Nuestra Señora del Pilar",
+            location: {
+                city: "Madrid",
+                country: "Spain",
+            },
+        },
+    },
+    {
+        date: {
+            from: new Date("2021-09"),
+            to: new Date("2023-06")
+        },
+        title: "Scientific Hich School Diploma",
+        centre: {
+            name: "Colegio María Teresa",
+            location: {
+                city: "Alcobendas - Madrid",
+                country: "Spain"
+            },
+        },
+    },
+]
+
+const timelineItems = experience.map(education2timeline)
+---
+
+<section>
+    <header>
+        <SectionTitle>Education</SectionTitle>
+    </header>
+
+    <Timeline items={timelineItems} titleColor="var(--color-pink-600)" />
+</section>
