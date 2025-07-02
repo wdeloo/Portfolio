@@ -1,5 +1,6 @@
 ---
 import About from '../components/about/About.astro';
+import Contact from '../components/contact/Contact.astro';
 import Education from '../components/education/Education.astro';
 import Experience from '../components/experience/Experience.astro';
 import Presentation from '../components/presentation/Presentation.astro';
@@ -10,14 +11,16 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Delo">
 	<header></header>
 
-	<main class="flex flex-col gap-6">
+	<main class="flex flex-col gap-10">
 		<Presentation />
 		<hr />
 		<About />
 		<Experience />
 		<Projects />
 		<Education />
+		<hr />
+		<Contact />
 	</main>
 
-	<footer class="min-h-14"></footer>
+	<footer></footer>
 </Layout>

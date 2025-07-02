@@ -20,13 +20,7 @@ const { title } = Astro.props
 	</body>
 </html>
 
-<style>
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-	}
-
+<style is:global>
 	:root {
 		--text: #262626;
 	}
@@ -53,4 +47,16 @@ const { title } = Astro.props
 		max-width: 800px;
 		padding: 30px;
 	}
+
+    .socialNetworkAnchor div, .socialNetworkAnchor svg {
+        transition: 150ms;
+    }
+
+    .socialNetworkAnchor:hover > div {
+        background-color: var(--text);
+    }
+
+    .socialNetworkAnchor:hover svg {
+        fill: white !important;
+    }
 </style>
