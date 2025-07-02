@@ -1,4 +1,5 @@
 ---
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
 import SectionTitle from "../SectionTitle.astro";
 import ProjectContainer from "./ProjectContainer.astro";
 import BrilliantChess from "./projects/BrilliantChess.astro";
@@ -6,6 +7,50 @@ import DazBoard from "./projects/DazBoard.astro";
 import EscapeAI from "./projects/EscapeAI.astro";
 import HTBMadeEZ from "./projects/HTBMadeEZ.astro";
 import Inflatio from "./projects/Inflatio.astro";
+
+interface Project {
+    Component: AstroComponentFactory
+    cols?: number
+    rows?: number
+    rotate?: number
+    color: string
+}
+
+const projects: Project[] = [
+    {
+        Component: BrilliantChess,
+        cols: 5,
+        rotate: 1,
+        color: "var(--color-yellow-100)",
+    },
+    {
+        Component: DazBoard,
+        cols: 2,
+        rows: 2,
+        rotate: -1,
+        color: "var(--color-blue-100)",
+    },
+    {
+        Component: HTBMadeEZ,
+        cols: 3,
+        rotate: 1,
+        color: "var(--color-green-100)",
+    },
+    {
+        Component: Inflatio,
+        cols: 3,
+        rows: 2,
+        rotate: 0.5,
+        color: "var(--color-red-100)",
+    },
+    {
+        Component: EscapeAI,
+        cols: 2,
+        rows: 2,
+        rotate: 1,
+        color: "var(--color-sky-100)",
+    },
+]
 ---
 
 <section>
@@ -14,20 +59,10 @@ import Inflatio from "./projects/Inflatio.astro";
     </header>
 
     <ul class="grid grid-cols-5 gap-5">
-        <ProjectContainer cols={5} rotate={1} color="var(--color-yellow-100)">
-            <BrilliantChess />
-        </ProjectContainer>
-        <ProjectContainer cols={2} rows={2} rotate={-1} color="var(--color-blue-100)">
-            <DazBoard />
-        </ProjectContainer>
-        <ProjectContainer cols={3} rotate={1} color="var(--color-green-100)">
-            <HTBMadeEZ />
-        </ProjectContainer>
-        <ProjectContainer cols={3} rows={2} rotate={0.5} color="var(--color-red-100)">
-            <Inflatio />
-        </ProjectContainer>
-        <ProjectContainer cols={2} rows={2} rotate={1} color="var(--color-sky-100)">
-            <EscapeAI />
-        </ProjectContainer>
+        {projects.map(project => 
+            <ProjectContainer cols={project.cols} rows={project.rows} rotate={project.rotate} color={project.color}>
+                <project.Component />
+            </ProjectContainer>
+        )}
     </ul>
 </section>
