@@ -1,0 +1,52 @@
+---
+import { marked } from 'marked';
+
+export interface TimelineItem {
+    date: { from: Date, to: Date }
+    title: string
+    description: string
+}
+
+function getMonthName(monthNumber: number): string {
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  return months[monthNumber]
+}
+
+const { items, titleColor } = Astro.props as { items: TimelineItem[], titleColor: string }
+---
+
+<ol class="flex flex-col gap-4">
+    {items.map(item => 
+        <li>
+            <article>
+                <header>
+                    <div class="opacity-75">
+                        <time>{getMonthName(item.date.from.getMonth())}, {item.date.from.getFullYear()}</time> - <time>{getMonthName(item.date.to.getMonth())}, {item.date.to.getFullYear()}</time>
+                    </div>
+                    <h2 style={`color: ${titleColor}`} class="text-xl font-extrabold">{item.title}</h2>
+                </header>
+                <div class="css-markdown" set:html={marked(item.description)} />
+            </article>
+        </li>
+    )}
+</ol>
+
+<style is:global>
+    .css-markdown ul > li {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .css-markdown ul > li::before {
+        content: "";
+        min-width: 6px;
+        max-width: 6px;
+        min-height: 6px;
+        max-height: 6px;
+        border-radius: 99999px;
+        background-color: var(--text);
+        display: block;
+        margin-right: 6px;
+        margin-top: calc(24px / 2 - 6px / 2);
+    }
+</style>
