@@ -1,0 +1,36 @@
+---
+import Development from "./Development.astro"
+
+const { cols = 1, rows = 1, rotate = 0, color, href, development = { is: false } } = Astro.props
+---
+
+<li class="shadow shadow-neutral-400 hover:scale-105 group hover:shadow-lg will-change-transform hover:z-10 transition duration-200 h-fit relative"
+    style={`background-color: ${color}`}>
+    <a class="p-4 block" target="_blank" href={href}>
+        <slot />
+    </a>
+    {development.is && <div class="bg-black absolute cursor-not-allowed opacity-0 group-hover:opacity-10 transition-opacity duration-150 w-full h-full top-0 left-0" />}
+    {development.is && <Development position={development.position} />}
+</li>
+
+<style define:vars={{
+    "initial-rotate": rotate + "deg",
+    cols: cols,
+    rows: rows,
+}}>
+    li {
+        transform: rotate(var(--initial-rotate));
+
+        grid-column: span var(--cols) / span var(--cols);
+        grid-row: span var(--rows) / span var(--rows);
+
+        @media (width < 815px) {
+            grid-column: span 1 / span 1;
+            grid-row: span 1 / span 1;
+        }
+    }
+
+    li:hover {
+        transform: rotate(0);
+    }
+</style>

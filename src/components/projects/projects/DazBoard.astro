@@ -5,15 +5,18 @@ import React from "../../tags/tags/React.astro";
 import Tailwind from "../../tags/tags/Tailwind.astro";
 import TextContainer from "../TextContainer.astro";
 import TypeScript from "../../tags/tags/TypeScript.astro";
+import Title from "../Title.astro";
 ---
 
-<article class="flex flex-col gap-3">
-    <Sticked className="w-full h-fit">
-        <img class="w-full shadow" src="/images/projects/dazboard.png" />
-    </Sticked>
-    <div class="flex flex-col gap-4">
-        <div class="flex flex-col gap-2">
-            <h2 class="font-extrabold text-2xl">DazBoard</h2>
+<article class="flex flex-col gap-4">
+    <div>
+        <Sticked className="w-full max-[815px]:w-1/2 max-[815px]:mr-3 h-fit float-left mb-3">
+            <img class="w-full shadow" src="/images/projects/dazboard.png" />
+        </Sticked>
+        <div>
+            <Title>
+                DazBoard
+            </Title>
             <TextContainer>
                 <p>
                     A bento style <b>home page</b> for any web browser.
@@ -26,10 +29,10 @@ import TypeScript from "../../tags/tags/TypeScript.astro";
                 </p>
             </TextContainer>
         </div>
-        <Tags>
-            <React />
-            <Tailwind />
-            <TypeScript />
-        </Tags>
     </div>
+    <Tags>
+        <React />
+        <Tailwind />
+        <TypeScript />
+    </Tags>
 </article>

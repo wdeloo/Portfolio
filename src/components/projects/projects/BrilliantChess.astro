@@ -5,16 +5,17 @@ import Next from "../../tags/tags/Next.astro";
 import Tailwind from "../../tags/tags/Tailwind.astro";
 import TypeScript from "../../tags/tags/TypeScript.astro";
 import TextContainer from "../TextContainer.astro";
+import Title from "../Title.astro";
 ---
 
-<article class="flex flex-col gap-2">
-    <h2 class="font-extrabold text-2xl">
-        Brilliant Chess
-    </h2>
+<article class="flex flex-col gap-4">
     <div>
-        <Sticked className="float-right min-w-2/5 max-w-2/5 h-fit ml-3 -mb-7 bottom-10">
+        <Sticked className="float-right w-2/5 max-[815px]:w-1/2 ml-3 mb-3">
             <img class="shadow-sm" src="/images/projects/brilliant-chess.png" />
         </Sticked>
+        <Title>
+            Brilliant Chess
+        </Title>
         <TextContainer>
             <p>
                 A web app to analyze chess games for <b>FREE</b> like <b>chess.com</b> does for <b>5.5$/mo</b>.
