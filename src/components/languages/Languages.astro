@@ -1,0 +1,47 @@
+---
+import { flag } from "country-emoji"
+import SectionTitle from "../SectionTitle.astro";
+
+interface Language {
+    name: string
+    level: "Native" | "Fluent" | "Learning"
+    country: string
+}
+
+const languages: Language[] = [
+    {
+        name: "Spanish",
+        level: "Native",
+        country: "Spain"
+    },
+    {
+        name: "English",
+        level: "Fluent",
+        country: "United Kingdom"
+    },
+    {
+        name: "German",
+        level: "Learning",
+        country: "Germany"
+    },
+]
+---
+
+<section>
+    <header>
+        <SectionTitle>Languages</SectionTitle>
+    </header>
+
+    <div class="flex flex-row gap-5 text-lg">
+        <ul>
+            {languages.map(language => 
+                <li class="font-bold"><span class="emoji">{flag(language.country)}</span> {language.name}</li>
+            )}
+        </ul>
+        <ul>
+            {languages.map(language => 
+                <li>{language.level}</li>
+            )}
+        </ul>
+    </div>
+</section>

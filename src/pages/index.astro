@@ -3,6 +3,7 @@ import About from '../components/about/About.astro';
 import Contact from '../components/contact/Contact.astro';
 import Education from '../components/education/Education.astro';
 import Experience from '../components/experience/Experience.astro';
+import Languages from '../components/languages/Languages.astro';
 import Presentation from '../components/presentation/Presentation.astro';
 import Projects from '../components/projects/Projects.astro';
 import Layout from '../layouts/Layout.astro';
@@ -17,7 +18,10 @@ import Layout from '../layouts/Layout.astro';
 		<About />
 		<Experience />
 		<Projects />
-		<Education />
+		<div style="grid-template-columns: 60% 40%;" class="grid">
+			<Education />
+			<Languages />
+		</div>
 		<hr />
 		<Contact />
 	</main>
