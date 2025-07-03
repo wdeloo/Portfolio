@@ -19,6 +19,7 @@ import Php from "../tags/tags/Php.astro";
 import Sql from "../tags/tags/Sql.astro";
 import PlSql from "../tags/tags/PlSql.astro";
 import Bash from "../tags/tags/Bash.astro";
+import Go from "../tags/tags/Go.astro";
 
 type TechnologySector = "frontend" | "backend" | "devops"
 
@@ -37,6 +38,7 @@ const technologies: { [key in TechnologySector]: AstroComponentFactory[] } = {
         Node,
         Python,
         Csharp,
+        Go,
         Php,
         Next,
         Express,
@@ -45,6 +47,7 @@ const technologies: { [key in TechnologySector]: AstroComponentFactory[] } = {
     ],
     devops: [
         Python,
+        Go,
         Bash,
     ],
 }
