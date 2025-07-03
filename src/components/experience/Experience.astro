@@ -22,7 +22,7 @@ function experience2timeline(experienceItem: ExperienceItem): TimelineItem {
     return {
         ...experienceItem,
         description: `
-***${experienceItem.company.name}, ${experienceItem.company.location.city} <span title="${name(countryFlag ?? "") ?? ""}" class="emoji">${countryFlag ?? ""}</span>***
+***${experienceItem.company.name}, <span class="inline-block">${experienceItem.company.location.city} <span title="${name(countryFlag ?? "") ?? ""}" class="emoji">${countryFlag ?? ""}</span></span>***
 
 <div class="h-1.5"></div>
 

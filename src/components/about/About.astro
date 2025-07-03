@@ -8,7 +8,7 @@ import Quote from "./quotes/Quote.astro";
         <SectionTitle>About Me</SectionTitle>
     </header>
 
-    <div class="flex flex-row gap-10">
+    <div class="flex flex-row max-[750px]:flex-col gap-10">
         <div class="text-lg leading-6 *:mt-2 -mt-2 flex-grow">
             <p>
                 I'm a 19-year-old full-stack software developer with a strong drive for learning and a passion for <b>building creative solutions to real-world problems</b>.
@@ -18,7 +18,7 @@ import Quote from "./quotes/Quote.astro";
             </p>
         </div>
 
-        <div class="max-w-[250px]">
+        <div class="min-w-[250px] max-w-[250px] max-[750px]:min-w-full max-[750px]:max-w-full">
             <Quote author="Ludiwg Von Mises">
                 Business is the only means to increase the quantity of goods available for preserving life and rendering it more agreeable.
             </Quote>

@@ -21,7 +21,7 @@ function education2timeline(educationItem: EducationItem): TimelineItem {
     return {
         ...educationItem,
         description: `
-***${educationItem.centre.name}, ${educationItem.centre.location.city} <span title="${name(countryFlag ?? "") ?? ""}" class="emoji">${countryFlag ?? ""}</span>***
+***${educationItem.centre.name}, <span class="inline-block">${educationItem.centre.location.city} <span title="${name(countryFlag ?? "") ?? ""}" class="emoji">${countryFlag ?? ""}</span></span>***
         `.trim()
     }
 }
