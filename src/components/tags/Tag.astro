@@ -1,7 +1,7 @@
 ---
-const { border } = Astro.props
+const { border, color } = Astro.props
 ---
 
-<li style={{ borderWidth: border ? "2px" : undefined }} class="w-fit border-current h-fit font-bold text-base relative flex flex-row gap-1 px-1.5 shadow items-center py-0.5 bg-white/85 will-change-transform">
+<li style={{ borderWidth: border ? "2px" : undefined, backgroundColor: color }} class="w-fit border-current h-fit font-bold text-base relative flex flex-row gap-1 px-1.5 shadow items-center py-0.5 bg-white/85 will-change-transform">
     <slot />
 </li>

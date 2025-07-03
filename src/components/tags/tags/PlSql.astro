@@ -1,8 +1,13 @@
 ---
 import Tag from "../Tag.astro";
+
+const tagColor = "var(--color-red-300)"
+const defaultColor = "white"
+
+const { border, color } = Astro.props
 ---
 
-<Tag {...Astro.props}>
+<Tag border={border} color={color ? tagColor : defaultColor}>
     <svg fill="currentColor" height="19px" width="19px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
     viewBox="0 0 58.201 58.201" xml:space="preserve">
         <g>

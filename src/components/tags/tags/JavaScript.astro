@@ -1,8 +1,13 @@
 ---
 import Tag from "../Tag.astro";
+
+const tagColor = "var(--color-yellow-300)"
+const defaultColor = "white"
+
+const { border, color } = Astro.props
 ---
 
-<Tag {...Astro.props}>
+<Tag border={border} color={color ? tagColor : defaultColor}>
     <svg width="18px" height="18px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="Dribbble-Light-Preview" transform="translate(-420.000000, -7479.000000)" fill="currentColor">
