@@ -1,0 +1,7 @@
+---
+const { position = "left" } = Astro.props
+---
+
+<div style={{ left: position === "left" ? "8px" : undefined, right: position === "right" ? "8px" : undefined }} class="bg-white shadow px-1 py-0.5 absolute top-2 border-2 font-extrabold text-sm">
+    Under Development
+</div>

@@ -14,6 +14,8 @@ interface Project {
     rows?: number
     rotate?: number
     color: string
+    url?: string
+    development?: boolean
 }
 
 const projects: Project[] = [
@@ -22,6 +24,7 @@ const projects: Project[] = [
         cols: 5,
         rotate: 1,
         color: "var(--color-yellow-100)",
+        url: "https://wdeloo.github.io/Brilliant-Chess"
     },
     {
         Component: DazBoard,
@@ -29,12 +32,14 @@ const projects: Project[] = [
         rows: 2,
         rotate: -1,
         color: "var(--color-blue-100)",
+        url: "https://wdeloo.github.io/DazBoard",
     },
     {
         Component: HTBMadeEZ,
         cols: 3,
         rotate: 1,
         color: "var(--color-green-100)",
+        url: "https://wdeloo.github.io/HTB-Made-EZ"
     },
     {
         Component: Inflatio,
@@ -42,6 +47,7 @@ const projects: Project[] = [
         rows: 2,
         rotate: 0.5,
         color: "var(--color-red-100)",
+        url: "https://wdeloo.github.io/Inflatio"
     },
     {
         Component: EscapeAI,
@@ -49,6 +55,7 @@ const projects: Project[] = [
         rows: 2,
         rotate: 1,
         color: "var(--color-sky-100)",
+        development: true,
     },
 ]
 ---
@@ -60,7 +67,7 @@ const projects: Project[] = [
 
     <ul class="grid grid-cols-5 gap-5">
         {projects.map(project => 
-            <ProjectContainer cols={project.cols} rows={project.rows} rotate={project.rotate} color={project.color}>
+            <ProjectContainer development={project.development} href={project.url} cols={project.cols} rows={project.rows} rotate={project.rotate} color={project.color}>
                 <project.Component />
             </ProjectContainer>
         )}
