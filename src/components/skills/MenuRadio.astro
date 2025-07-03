@@ -1,0 +1,8 @@
+---
+const { id, name, checked } = Astro.props
+---
+
+<div class="goup">
+    <input checked={checked} class="hidden peer" type="radio" id={id} name={name} />
+    <label class="peer-checked:opacity-100 opacity-75 transition-opacity text-xl font-extrabold cursor-pointer" for={id}><slot /></label>
+</div>

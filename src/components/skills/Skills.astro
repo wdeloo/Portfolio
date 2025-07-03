@@ -1,0 +1,93 @@
+---
+import type { AstroComponentFactory } from "astro/runtime/server/render/astro/index.js";
+import SectionTitle from "../SectionTitle.astro";
+import MenuRadio from "./MenuRadio.astro";
+import TagList from "./TagList.astro"
+import AstroTag from "../tags/tags/AstroTag.astro";
+import Next from "../tags/tags/Next.astro";
+import Python from "../tags/tags/Python.astro";
+import Tailwind from "../tags/tags/Tailwind.astro";
+import TypeScript from "../tags/tags/TypeScript.astro";
+import React from "../tags/tags/React.astro";
+import Express from "../tags/tags/Express.astro";
+import Csharp from "../tags/tags/Csharp.astro";
+import Node from "../tags/tags/Node.astro";
+import JavaScript from "../tags/tags/JavaScript.astro";
+import Html from "../tags/tags/Html.astro";
+import Css from "../tags/tags/Css.astro";
+import Php from "../tags/tags/Php.astro";
+import Sql from "../tags/tags/Sql.astro";
+import PlSql from "../tags/tags/PlSql.astro";
+import Bash from "../tags/tags/Bash.astro";
+
+type TechnologySector = "frontend" | "backend" | "devops"
+
+const technologies: { [key in TechnologySector]: AstroComponentFactory[] } = {
+    frontend: [
+        Html,
+        Css,
+        JavaScript,
+        TypeScript,
+        React,
+        Next,
+        AstroTag,
+        Tailwind,
+    ],
+    backend: [
+        Node,
+        Python,
+        Csharp,
+        Php,
+        Next,
+        Express,
+        Sql,
+        PlSql,
+    ],
+    devops: [
+        Python,
+        Bash,
+    ],
+}
+---
+
+<section>
+    <header>
+        <SectionTitle>Skills</SectionTitle>
+    </header>
+
+    <article class="technologiesSkills">
+        <header>
+            <div class="flex flex-row gap-3 mb-2" role="menu">
+                <MenuRadio checked name="technologies" id="frontendRadio">Frontend</MenuRadio>
+                <MenuRadio name="technologies" id="backendRadio">Backend</MenuRadio>
+                <MenuRadio name="technologies" id="devopsRadio">DevOps</MenuRadio>
+            </div>
+        </header>
+
+        <div class="overflow-hidden">
+            <div class="flex flex-row min-w-full max-w-full transition-transform *:min-w-full *:max-w-full">
+                <div class="frontendList">
+                    <TagList tags={technologies.frontend} />
+                </div>
+    
+                <div class="backendList">
+                    <TagList tags={technologies.backend} />
+                </div>
+    
+                <div class="devopsList">
+                    <TagList tags={technologies.devops} />
+                </div>
+            </div>
+        </div>
+    </article>
+</section>
+
+<style>
+    .technologiesSkills > header:has(#backendRadio:checked) + div > div {
+        translate: -100% 0;
+    }
+
+    .technologiesSkills > header:has(#devopsRadio:checked) + div > div {
+        translate: -200% 0;
+    }
+</style>

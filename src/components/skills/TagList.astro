@@ -1,0 +1,12 @@
+---
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+import Tags from "../tags/Tags.astro";
+
+const { tags } = Astro.props as { tags: AstroComponentFactory[] }
+---
+
+<Tags>
+    {tags.map(Tag =>
+        <Tag border />
+    )}
+</Tags>
