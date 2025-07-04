@@ -4,12 +4,14 @@ import Tags from "../../tags/Tags.astro";
 import Python from "../../tags/tags/Python.astro";
 import TextContainer from "../TextContainer.astro";
 import Title from "../Title.astro";
+import escapeAi from "../../../images/projects/escapeai.png"
+import { Image } from "astro:assets";
 ---
 
 <article class="flex flex-col gap-4">
     <div>
         <Sticked className="w-full max-[815px]:w-1/2 max-[550px]:w-full h-fit float-right max-[815px]:ml-3 max-[550px]:ml-0 mb-3">
-            <img class="w-full shadow" src="/images/projects/escapeai.png" />
+            <Image class="shadow-sm w-full" src={escapeAi} width={500} alt="escapeai" />
         </Sticked>
         <Title>Escape AI</Title>
         <TextContainer>

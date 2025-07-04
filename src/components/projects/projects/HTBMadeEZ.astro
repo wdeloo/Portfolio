@@ -6,12 +6,14 @@ import Tailwind from "../../tags/tags/Tailwind.astro";
 import TextContainer from "../TextContainer.astro";
 import TypeScript from "../../tags/tags/TypeScript.astro";
 import Title from "../Title.astro";
+import htbMadeEZ from "../../../images/projects/htb-made-ez.png"
+import { Image } from "astro:assets";
 ---
 
 <article class="flex flex-col gap-4">
     <div>
         <Sticked className="w-4/7 max-[815px]:w-1/2 max-[550px]:w-full max-[550px]:ml-0 h-fit float-right ml-3 mb-3">
-            <img class="w-full shadow" src="/images/projects/htb-made-ez.png" />
+            <Image class="shadow-sm w-full" src={htbMadeEZ} width={500} alt="htb made ez" />
         </Sticked>
         <Title>
             HTB Made EZ

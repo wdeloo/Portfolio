@@ -1,6 +1,8 @@
 ---
+import { Image } from "astro:assets"
 import Name from "./Name"
 import SocialNetworks from "./SocialNetworks.astro"
+import profile from "../../images/profile.png"
 ---
 
 <section class="flex flex-row max-[815px]:flex-col-reverse max-[815px]:gap-10 justify-between items-center">
@@ -16,7 +18,7 @@ import SocialNetworks from "./SocialNetworks.astro"
     </header>
 
     <div class="flex flex-col items-center gap-1">
-        <img width="300px" src="/images/profile.png" class="rounded-full" />
+        <Image alt="Profile picture" src={profile} width={300} class="rounded-full" />
         <SocialNetworks />
     </div>
 </section>
